@@ -1,0 +1,5 @@
+name = Cards
+description = The module that will display a card
+package = Our Pet Module
+core = 7.x
+files[] = cards.module

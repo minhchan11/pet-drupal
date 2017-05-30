@@ -1,0 +1,6 @@
+name = Pet
+description = The module that will display a pet
+package = Our Pet Module
+core = 7.x
+files[] = pet.module
+stylesheets[all][] = Newstyle.css

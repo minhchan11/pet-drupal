@@ -1,0 +1,57 @@
+<?php
+
+function pet_menu(){
+  $pet = array();
+  $pet['animal']= array(
+    'title' => 'Pet',
+    'page callback' => 'display_pet',
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+  $pet['grocery']= array(
+    'title' => 'grocery',
+    'page callback' => 'display_grocery',
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $pet;
+}
+
+function display_pet(){
+  $file = '/sites/all/modules/pet/newImg/';
+  return '<h1>Fido</h1>' . '<h3>Breed: Lab</h3>' . '<img src="' . $file . 'fido.jpeg'. '" class="fido">' . '<a href="http://dogtime.com/dog-breeds">Check out more dogs</a>';
+}
+
+function grocery_array(){
+  return $groceries2 = array('donut' => '99 cents');
+}
+function display_grocery(){
+  $groceries[] = array(
+    'name'=> 'eggs',
+    'price' => 1.89,
+    'quanity'=> 2,
+  );
+  $groceries[] = array(
+    'name'=> 'apples',
+    'price'=> 1.99,
+    'quanity' => 4,
+  );
+  $groceries[] = array(
+    'name' => 'squash',
+    'price' =>.89,
+    'quanity' => 1.5
+  );
+  $output = null;
+  $total = null;
+ foreach($groceries as $grocery){
+   $itemTotal = $grocery["price"] * $grocery['quanity'];
+   $total += $itemTotal;
+    $output .= "<ul><li>" . $grocery['name'] . "</li><li>Unit Price: $" . $grocery['price'] ."</li><li>Quanity: " . $grocery['quanity'] . "</li><li>   Price: $" . number_format($itemTotal,2) . "</li></ul>";
+  }
+  $random = grocery_array();
+  foreach ($random as $key => $value) {
+    $output .= "<h5>" . $key . ": " . $value . "</h5>";
+  }
+  return $output . "<h3>Item Total: </h3>" . number_format($total,2);
+
+}
