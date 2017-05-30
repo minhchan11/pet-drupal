@@ -1,0 +1,5 @@
+name = Favorite
+description = The module will display my favorites
+package = Our Pet Module
+core = 7.x
+files[] = favorite.module

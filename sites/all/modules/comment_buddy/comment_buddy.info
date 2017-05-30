@@ -1,0 +1,5 @@
+name = Comment Buddy
+description = Make things happen when you leave comments
+package = Our Pet Module
+core = 7.x
+files[] = comment_buddy.module

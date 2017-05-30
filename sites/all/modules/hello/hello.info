@@ -1,0 +1,5 @@
+name = hello
+description = Log in fun for new users!
+package = Our Pet Module
+core = 7.x
+files[] = hello.module

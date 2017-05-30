@@ -1,0 +1,26 @@
+<?php
+function favorite_menu(){
+  $favorite = array();
+  $bests['friend'] = array('joe','jack','jill');
+  $bests['food'] = array('cupcake', 'cheese', 'bananna');
+  $bests['songs'] = array('bananna phone', 'rocky mountian', 'new slang');
+  foreach ($bests as $key => $value) {
+    $favorite['favorite/' . $key]= array(
+      'title' => $key,
+      'page callback' => 'display_favorite',
+      'page arguments' => array($value),
+      'access callback' => TRUE,
+      'type' => MENU_NORMAL_ITEM,
+    );
+  }
+  return $favorite;
+}
+
+function display_favorite($array){
+  $output = null;
+  foreach ($array as $thing)
+  {
+    $output .= '<li>' . $thing . '</li>';
+  }
+  return $output;
+}

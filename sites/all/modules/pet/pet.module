@@ -55,3 +55,6 @@ function display_grocery(){
   return $output . "<h3>Item Total: </h3>" . number_format($total,2);
 
 }
+function pet_user_login(){
+  $_GET['destination'] = 'animal';
+}

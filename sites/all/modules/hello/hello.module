@@ -1,0 +1,18 @@
+<?php
+  function hello_menu(){
+    $display['hello'] = array(
+      'title'=> 'Hello Friend',
+      'page callback' => 'say_hello',
+      'access callback' => TRUE,
+      'type' => MENU_CALLBACK,
+    );
+    return $display;
+  }
+
+  function say_hello(){
+    return '<h1>Hey there new user guy/gal!!</h1>';
+  }
+
+  function hello_user_insert(&$edit, $account, $category){
+    $_GET['destination'] = 'hello';
+  }
