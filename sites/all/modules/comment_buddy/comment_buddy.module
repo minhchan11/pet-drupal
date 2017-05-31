@@ -1,26 +1,22 @@
 <?php
- function comment_buddy(){
-   $comment = array();
-   $comment['comment'] = array(
-     'title' => 'comment',
-     'page callback' => custom_submit_function,
+
+ function comment_buddy_menu(){
+   $items = array();
+   $items['comments_add'] = array(
+     'title' => 'New Message',
+     'page callback' => 'add_comments',
      'access callback' => TRUE,
      'type' => MENU_CALLBACK,
    );
+   return $items;
  }
 
- // function display_comment()
- // {
- //   return '<h1> hello </h1>';
- // }
-function custom_form_comment_form_alter(&$form, &$form_state){
-  $form['#after_build'][] = 'custom_afterbuild_function';
-}
 
- function custom_afterbuild_function($form, &$form_state) {
-  $form['#submit'][] = 'custom_submit_function';
-}
+ function add_comments(){
+   drupal_set_message('Comment commented');
+   return '<p>Thank you for your comment</p>';
+ }
 
- function custom_submit_function($form, &$form_state) {
-  drupal_set_message('Comment commented');
+ function comment_buddy_comment_insert(){
+   $_GET['destination'] = 'comments_add';
  }
