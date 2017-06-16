@@ -2,7 +2,6 @@
 function bakery_user_menu() {
     $items['welcome'] = array(
         'title' => 'Hi There!',
-
         'page callback' => 'welcome_user',
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
@@ -10,7 +9,7 @@ function bakery_user_menu() {
     return $items;
 }
 
-function bakery_user_login() {
+function bakery_user_user_login(&$edit, $account) {
     $_GET['destination'] = 'welcome';
 }
 
